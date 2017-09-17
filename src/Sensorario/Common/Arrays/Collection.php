@@ -20,4 +20,9 @@ final class Collection
     {
         $this->items[] = $item;
     }
+
+    public function hasItem($item)
+    {
+        return in_array($item, $this->items);
+    }
 }

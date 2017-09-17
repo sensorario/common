@@ -31,4 +31,17 @@ final class CollectionTest extends TestCase
             $collection->getItems()
         );
     }
+
+    public function testKnowsIfAnItemIsNotPresent()
+    {
+        $collection = new Collection([]);
+        $this->assertSame(false, $collection->hasItem(42));
+    }
+
+    public function testKnowsIfAnItemIsPresent()
+    {
+        $collection = new Collection([]);
+        $collection->append(42);
+        $this->assertSame(true, $collection->hasItem(42));
+    }
 }
