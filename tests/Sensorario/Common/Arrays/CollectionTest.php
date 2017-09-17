@@ -4,14 +4,24 @@ namespace Sensorario\Common\Arrays;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers Sensorario\Common\Arrays\ArrayCleaner
+ */
 final class CollectionTest extends TestCase
 {
-    /** @expectedException \ArgumentCountError */
+    /**
+     * @expectedException \ArgumentCountError
+     * @covers Sensorario\Common\Arrays\Collection::__construct
+     */
     public function testMustBeDefinedWithAnArray()
     {
         $collection = new Collection();
     }
 
+    /**
+     * @covers Sensorario\Common\Arrays\Collection::__construct
+     * @covers Sensorario\Common\Arrays\Collection::getItems
+     */
     public function testIsDefinedWithAnArray()
     {
         $items = [42, 42, 44444];
@@ -22,6 +32,11 @@ final class CollectionTest extends TestCase
         );
     }
 
+    /**
+     * @covers Sensorario\Common\Arrays\Collection::__construct
+     * @covers Sensorario\Common\Arrays\Collection::append
+     * @covers Sensorario\Common\Arrays\Collection::getItems
+     */
     public function testAppendItemsOneByOne()
     {
         $collection = new Collection([]);
@@ -32,12 +47,21 @@ final class CollectionTest extends TestCase
         );
     }
 
+    /**
+     * @covers Sensorario\Common\Arrays\Collection::__construct
+     * @covers Sensorario\Common\Arrays\Collection::hasItem
+     */
     public function testKnowsIfAnItemIsNotPresent()
     {
         $collection = new Collection([]);
         $this->assertSame(false, $collection->hasItem(42));
     }
 
+    /**
+     * @covers Sensorario\Common\Arrays\Collection::__construct
+     * @covers Sensorario\Common\Arrays\Collection::append
+     * @covers Sensorario\Common\Arrays\Collection::hasItem
+     */
     public function testKnowsIfAnItemIsPresent()
     {
         $collection = new Collection([]);

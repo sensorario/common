@@ -1,2 +1,2 @@
 #!/bin/bash
-./bin/phpunit --coverage-html coverage/
+./bin/phpunit --coverage-html html/
