@@ -1,0 +1,14 @@
+{
+
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "phpunit/phpunit": "^6.3"
+    }
+}
