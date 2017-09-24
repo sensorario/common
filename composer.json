@@ -8,12 +8,12 @@
     "config": {
         "bin-dir": "bin"
     },
-    "require": {
+    "require-dev": {
         "phpunit/phpunit": "^6.3"
     },
     "extra": {
         "branch-alias": {
-            "master": "dev-master"
+            "master": "1.0-dev"
         }
     }
 }
