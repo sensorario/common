@@ -1,5 +1,5 @@
 {
-    "name": "sensorario/resources",
+    "name": "sensorario/common",
     "autoload": {
         "psr-4": {
             "": "src/"
