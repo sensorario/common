@@ -15,5 +15,8 @@
         "branch-alias": {
             "master": "1.0-dev"
         }
+    },
+    "require": {
+        "symfony/workflow": "^3.3"
     }
 }
