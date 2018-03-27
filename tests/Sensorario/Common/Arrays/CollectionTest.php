@@ -68,4 +68,33 @@ final class CollectionTest extends TestCase
         $collection->append(42);
         $this->assertSame(true, $collection->hasItem(42));
     }
+
+    public function testProvideSplice()
+    {
+        $items = [42, 42, 44444];
+        $expectedItems = [44444];
+        $collection = new Collection($items);
+        $collection->initWith([
+            Collection::PAGE_LENGTH => 1,
+            Collection::PAGE_NUMBER => 3,
+        ]);
+        $this->assertEquals(
+            $expectedItems,
+            $collection->getItemsSplice()
+        );
+    }
+
+    public function testProvidePageOfIterms()
+    {
+        $items = [42, 42, 44444];
+        $expectedItems = [44444];
+        $collection = new Collection($items);
+        $this->assertEquals(
+            $expectedItems,
+            $collection->getItemsPage([
+                Collection::PAGE_LENGTH => 1,
+                Collection::PAGE_NUMBER => 3,
+            ])
+        );
+    }
 }
